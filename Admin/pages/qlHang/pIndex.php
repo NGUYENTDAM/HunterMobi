@@ -11,6 +11,7 @@
         break;
         case 2:
             include "pages/qlHang/pCapNhat.php";
+        break;
         case 3:
             include "pages/qlHang/pThemMoi.php";
         break;

@@ -1,4 +1,4 @@
-<h1>Quản lý tài khoản</h1>
+<h1>Quản lý Loại Sản Phẩm</h1>
 <?php
     $a = 1;
     if(isset($_GET["a"]))
@@ -11,6 +11,9 @@
         break;
         case 2:
             include "pages/qlLoai/pCapNhat.php";
+        break;
+        case 3:
+            include "pages/qlLoai/pThemMoi.php";
         break;
         default:
         include "pages/pError.php";

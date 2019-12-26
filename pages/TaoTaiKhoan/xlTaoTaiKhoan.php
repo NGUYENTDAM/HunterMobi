@@ -18,7 +18,7 @@
             DataProvider::ChangeURL("../../..".$curURL."&err=1");
         }
         else{
-        $sql = "INSERT INTO taikhoan(TenDangNhap, MatKhau, TenHienThi, DienThoai, Email, MaLoaiTaiKhoa) 
+        $sql = "INSERT INTO taikhoan(TenDangNhap, MatKhau, TenHienThi, DienThoai, Email, MaLoaiTaiKhoan) 
                 VALUES ('$us', '$ps', '$name', '$tel', '$mail', 1)";
 
         DataProvider::ExecuteQuery($sql);

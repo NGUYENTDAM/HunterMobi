@@ -1,14 +1,14 @@
-<form action="pages/qlSanPham/xlThemMoi.php" method="post" onsubmit="return KiemTra();" enctype="multipart/form-data">
+<form action="pages/qlSanPham/xlThemMoi.php" method="get" onsubmit="return KiemTra();" enctype="multipart/form-data">
   <fieldset>
        <legend>Thêm sản phẩm mới</legend>
     <div>
-       <span>Tên hãng sản xuất:</span>
+       <span>Tên sản phẩm:</span>
        <input type="text" name="txtTen" id="txtTen" />
        <i id="errTen"></i>
     </div>
    <div>
        <span>Hãng sản xuất</span>
-       <select name="cmbHang">
+       <select name="cbHang">
           <?php  
               $sql = "SELECT *FROM HangSanXuat WHERE BiXoa=0";
               $result = DataProvider::ExecuteQuery($sql);
@@ -37,6 +37,22 @@
     <div>
         <span>Mô tả</span>
         <textarea name="txtMoTa"></textarea>
+    </div>
+    <div>
+        <span>Loại sản phẩm :</span>
+        <input type="text" name="txtLoai" id="txtLoai"/>
+    </div>
+    <div>
+        <span>Hãng sản xuất :</span>
+        <input type="text" name="txtHang" id="txtHang"/>
+    </div>
+    <div>
+        <span>Xuất xứ :</span>
+        <input type="text" name="txtXx" id="txtXx"/>
+    </div>
+    <div>
+        <span>Nhà sản xuất :</span>
+        <input type="text" name="txtNsx" id="txtNsx"/>
     </div>
     <div>
         <input type="submit" value="Thêm mới"/>

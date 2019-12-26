@@ -4,12 +4,19 @@
    if(isset($_GET["id"]))
    {
        $id = $_GET["id"];
-       $ten = $_GET["txtten"];
+       $ten = $_GET["txtTen"];
+       $hang = $_GET["cbHang"];
+       $loai = $_GET["cbLoai"];
+       $gia = $_GET["txtGia"];
+       $ton = $_GET["txtTon"];
+       $ban = $_GET["txtBan"];
+       $mota = $_GET["txtMota"];
 
-       $sql = "UPDATE HangSanXuat SET TenHangSanXuat = '$ten' WHERE MaHangSanXuat = $id";
+       $sql = "UPDATE SanPham SET TenSanPham = '$ten',GiaSanPham='$gia',SoLuongTon='$ton',SoLuongBan ='$ban',
+       MoTa='$mota',MaLoaiSanPham='$loai',MaHangSanXuat='$hang' WHERE MaSanPham = $id";
 
        DataProvider::ExecuteQuery($sql);
    }
 
-   DataProvider::ChangeURL("../../index.php?c=4");
+   DataProvider::ChangeURL("../../index.php?c=2");
 ?>

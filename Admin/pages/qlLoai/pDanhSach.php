@@ -1,47 +1,34 @@
+<button type="button" class="btn btn-success" onclick="window.location.href='index.php?c=3&a=3'" style="margin-left:25%;margin-top:10px;margin-bottom:10px">Thêm loại sản phẩm</button>
+
 <table cellspacing="0" border="1">
     <tr>
-       <th width="100"> Mã tài khoản</th>
-       <th width="200"> Tên đăng nhập</th>
-       <th width="200"> Tên hiển thị</th>
-       <th width="150"> Điện thoại</th>
-       <th width="200"> Email</th>
-       <th width="75"> Tình trạng</th>
-       <th width="150"> Loại tài khoản</th>
-       <th width="100"> Thao tác</th>
+        <th width="100" class="text-center"> Mã loại</th>
+        <th width="200" class="text-center"> Tên loại</th>
+        <th width="75" class="text-center"> Tình trạng</th>
+        <th width="300" class="text-center"> Thao tác</th>
     </tr>
     <?php
-       $sql = "SELECT t.MaTaiKhoan, t.TenDangNhap, t.TenHienThi, t.DienThoai, t.Email, t.BiXoa, l.TenLoaiTaiKhoan FROM TaiKhoan t, LoaiTaiKHoan l 
-              WHERE t.MaLoaiTaiKhoan = l.MaLoaiTaiKhoan";
-              $result = DataProvider::ExecuteQuery($sql);
-              while ($row = mysqli_fetch_array($result))
-              {
-                  ?>
-                  <tr>
-                       <td><?php echo $row["MaTaiKhoan"]; ?></td>
-                       <td><?php echo $row["TenDangNhap"]; ?></td>
-                       <td><?php echo $row["TenHienThi"]; ?></td>
-                       <td><?php echo $row["DienThoai"]; ?></td>
-                       <td><?php echo $row["Email"]; ?></td>
-                  <td>
-                      <?php
-                         if($row["BiXoa"] == 1)
-                            echo "<img src='images/locked.png' />";
-                         else
-                            echo "<img src='images/active.png' />";
-                       ?>
-                  </td>
-                  <td><?php echo $row["TenLoaiTaiKhoan"]; ?></td>
-                  <td>
-                     <a href="pages/qlTaiKhoan/xlKhoa.php?id=<?php echo $row["MaTaiKhoan"] ?>">
-                        <img src="images/lock.png"/>
-                    </a>
-                    <a href="index.php?c=1&a=2&id=<?php echo $row["MaTaiKhoan"] ?> ">
-                        <img src="images/edit.png"/>
-                    </a>
-                </td>
-             </tr>
-         <?php
-     }
- ?>
+    $sql = "SELECT MaLoaiSanPham,TenLoaiSanPham,BiXoa FROM LoaiSanPham";
+    $result = DataProvider::ExecuteQuery($sql);
+    while ($row = mysqli_fetch_array($result)) {
+    ?>
+        <tr>
+            <td><?php echo $row["MaLoaiSanPham"]; ?></td>
+            <td><?php echo $row["TenLoaiSanPham"]; ?></td>
+            <td>
+                <?php
+                if ($row["BiXoa"] == 1)
+                    echo "<img src='images/locked.png' />";
+                else
+                    echo "<img src='images/active.png' />";
+                ?>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" onclick="window.location.href='pages/qlLoai/xlXoa.php?id=<?= $row['MaLoaiSanPham'] ?>'" style="margin-left:15px;margin-top:5px;margin-bottom:5px">Xoá Loại Sản Phẩm</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='index.php?c=3&a=2&id=<?= $row['MaLoaiSanPham'] ?>'" style="margin-left:10px;">Cập nhật</button>
+            </td>
+        </tr>
+    <?php
+    }
+    ?>
 </table>
-      

@@ -1,11 +1,11 @@
 <?php
    include "../../../lib/DataProvider.php";
 
-   if(isset($_GET["txtTen"]))
+   if(isset($_GET["id"]))
    {
-       $ten = $_GET["txtTen"];
-
-       $sql = "INSERT INTO HangSanXuat(TenHangSanXuat, BiXoa) VALUES('$ten',0)";
+       $id = $_GET["id"];
+    
+       $sql = "UPDATE HangSanXuat SET BiXoa = 1 WHERE MaHangSanXuat = $id";
        DataProvider::ExecuteQuery($sql);
    }
 

@@ -12,6 +12,9 @@
         case 2:
             include "pages/qlTaiKhoan/pCapNhat.php";
         break;
+        case 3:
+            include "pages/qlTaiKhoan/pThemMoi.php";
+        break;
         default:
         include "pages/pError.php";
     break;

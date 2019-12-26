@@ -4,10 +4,8 @@
    if(isset($_GET["id"]))
    {
        $id = $_GET["id"];
-       $ten = $_GET["txtTen"];
-
-       $sql = "UPDATE LoaiSanPham SET TenLoaiSanPham = '$ten' WHERE MaLoaiSanPham = $id";
-
+    
+       $sql = "UPDATE LoaiSanPham SET BiXoa = 1 WHERE MaLoaiSanPham = $id";
        DataProvider::ExecuteQuery($sql);
    }
 

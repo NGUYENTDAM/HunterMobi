@@ -1,9 +1,7 @@
 <?php
      session_start();
      include "../lib/DataProvider.php";
-
-     //Kiểm tra có người dùng đăng nhập với quyền admin hay chưa?
-
+    // Kiểm tra tk admin
      if(!isset($_SESSION["MaLoaiTaiKhoan"]) || $_SESSION["MaLoaiTaiKhoan"]!= 2)
      DataProvider::ChangeURL("../index.php");
 
@@ -18,6 +16,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Phân hệ quản lý</title>
     <link rel="stylesheet" type="text/css" href="css/admin.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
      <div id="header">

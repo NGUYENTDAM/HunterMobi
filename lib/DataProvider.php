@@ -4,8 +4,8 @@
         public static function ExecuteQuery($sql)
         {
             $connection = mysqli_connect('localhost','root','','dbhunter') or
-                die ("couldn't connect to localhost");
-                mysqli_query($connection, $sql);
+                die ("Không thể kết nối");
+                mysqli_query($connection,"set names 'utf8'");
                 $result = mysqli_query($connection, $sql);
                 mysqli_close($connection);
                 return $result;

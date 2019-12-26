@@ -8,17 +8,17 @@
     $result = DataProvider::ExecuteQuery($sql);
     $row = mysqli_fetch_array($result);
 ?>
-<form action="pages/qlSanPham/xlCapNhat.php" method="post" onsubmit="return KiemTra();" enctype="multipart/form-data">
+<form action="pages/qlSanPham/xlCapNhat.php" method="get" onsubmit="return KiemTra();" enctype="multipart/form-data">
    <fieldset class="ThemSanPham">
       <legend>Cập nhật thông tin  sản phẩm</legend>
       <div>
-         <span>Tên hãng sản xuất:</span>
+         <span>Tên sản phẩm :</span>
          <input type="text" name="txtTen" id="txtTen" value="<?php echo $row["TenSanPham"]; ?>" />
-         <o id="errTen"></i>
+         <i id="errTen"></i>
       </div>
      <div>
         <span>Hãng sản xuất</span>
-        <select name="cmbHang">
+        <select name="cbHang">
             <?php
                 $sql = "SELECT *FROM HangSanXuat WHERE BiXoa = 0";
                 $result = DataProvider::ExecuteQuery($sql);
@@ -32,8 +32,8 @@
                 </select>
         </div>
         <div>
-           <span>LoaiSanPham</span>
-           <select name="cmbLoai">
+           <span>Loại Sản Phẩm</span>
+           <select name="cbLoai">
                <?php
                   $sql = "SELECT *FROM LoaiSanPham WHERE BiXoa = 0";
                   $result = DataProvider::ExecuteQuery($sql);
