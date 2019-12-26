@@ -1,0 +1,78 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#header{
+    background-color:floralwhite;
+    font-size: 30px;
+    text-align: center;
+    padding: 30px 0px 30px 0px;
+}
+#header a{
+    color:black;
+    text-decoration: none;
+   
+    
+}
+#menu{
+    background-color: blue;
+    font-size: 14px;
+    padding: 10px 0px 10px 0px;
+}
+
+#mMenu a{
+    text-decoration: none;
+    color: white;
+    margin: 0px;
+    padding:10px 0px 10px 0px;
+}
+
+#mMenu{
+    float: left;
+    margin: 0px;
+    padding: 0px;
+}
+#login{
+    float: right;
+    color: white;
+}
+
+#login a{
+    text-decoration: none;
+    color: white;
+}
+
+.selected{
+    background-color: crimson;
+}
+
+#content h1{
+    text-align: center;
+    color: red;
+    font-size: 25px;
+}
+
+th{
+    background-color: blue;
+    color: white;
+    font-size: 14px;
+}
+
+table{
+    border-color: blue;
+    margin: 0 auto;
+}
+
+#footer{
+    clear:both;
+    background:floralwhite url(../img/footer_bg.gif) repeat-x;
+    padding: 8px 8px 5px 8px;
+    text-align: center;
+    border-bottom: 2px solid #FFF;
+    font-weight: bold;
+    color:black;
+}
+
+.clear {
+    clear: both;
+}
+
